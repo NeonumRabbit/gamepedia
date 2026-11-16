@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Полное руководство по публикации — Gamepedia</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="bg-body-tertiary">
+
+  <nav class="navbar navbar-expand-lg bg-body shadow-sm sticky-top">
+    <div class="container">
+      <a class="navbar-brand fw-bold" href="index.html"><i class="bi bi-controller me-2 text-primary"></i>Gamepedia</a>
+      <div class="navbar-nav ms-auto flex-row flex-wrap">
+        <a class="nav-link" href="index.html">Главная</a>
+        <a class="nav-link" href="publishing.html">← Назад к публикации</a>
+      </div>
+    </div>
+  </nav>
+
+  <header class="bg-danger text-white py-5 mb-5 shadow-sm" style="background: linear-gradient(135deg, #dc3545 0%, #a71d2a 100%);">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8">
+          <span class="badge bg-light text-danger mb-3">База знаний</span>
+          <h1 class="display-5 fw-bold">Глубокое погружение: Публикация</h1>
+          <p class="lead mb-0">Как оформить страницу игры, куда загрузить билд и чем itch.io отличается от Steam.</p>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main class="container pb-5">
+    <div class="row">
+      <!-- Боковое меню -->
+      <div class="col-lg-3 d-none d-lg-block">
+        <div class="position-sticky" style="top: 100px;">
+          <div class="card border-danger">
+            <div class="card-header fw-bold bg-danger text-white">Содержание</div>
+            <ul class="list-group list-group-flush">
+              <li class="list-group-item"><a href="#storepage" class="text-decoration-none">1. Страница игры</a></li>
+              <li class="list-group-item"><a href="#itchio" class="text-decoration-none">2. Площадка itch.io</a></li>
+              <li class="list-group-item"><a href="#steam" class="text-decoration-none">3. Steam</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- Сама статья -->
+      <div class="col-lg-9">
+        
+        <article class="card mb-4" id="storepage">
+          <div class="card-body p-4 p-md-5">
+            <h2 class="mb-4 text-danger"><i class="bi bi-card-image me-2"></i>1. Подготовка страницы игры</h2>
+            <p>Люди судят об игре по обложке. В интернете у вас нет возможности похвалить игру голосом — всё решают картинки и текст.</p>
+            
+            <h5 class="mt-4">Визуал (Скриншоты и гифки)</h5>
+            <p>Никто не будет смотреть статичные скриншоты. Запишите 3-4 коротких GIF-анимации (по 5-10 секунд), где показан самый сочный геймплей: взрывы, прыжки, красивые эффекты. Это первое, на что смотрит игрок.</p>
+
+            <h5 class="mt-4">Описание (Elevator Pitch)</h5>
+            <p>Первые два предложения — самые важные. Не пишите «Это игра про приключения». Пишите конкретно: «Хардкорный 2D-платформер, где вы играете за кота с реактивным ранцем и спасаете мир от роботов-пылесосов».</p>
+
+            <div class="alert alert-danger mt-4">
+              <i class="bi bi-eye-fill me-2"></i><strong>Совет:</strong> Покажите страницу игры друзьям до релиза. Если они не понимают, во что играют по описанию — переписывайте.
+            </div>
+          </div>
+        </article>
+
+        <article class="card mb-4" id="itchio">
+          <div class="card-body p-4 p-md-5">
+            <h2 class="mb-4 text-danger"><i class="bi bi-cloud-arrow-up me-2"></i>2. Площадка itch.io</h2>
+            <p>itch.io — это Мекка инди-разработчиков. Здесь публикуются миллионы маленьких игр. Это лучший старт для новичка.</p>
+
+            <h5 class="mt-4">Почему itch.io?</h5>
+            <ul>
+              <li><strong>Бесплатно:</strong> Загрузка игр не стоит ни копейки.</li>
+              <li><strong>Простота:</strong> Вы загружаете ZIP-архив с игрой, ставите галочку, и она работает в браузере.</li>
+              <li><strong>Формат Web (HTML5):</strong> Если вы сделали игру в Unity или Godot, вы можете экспортировать её для браузера. Игроку не нужно ничего скачивать — он просто нажимает "Play".</li>
+            </ul>
+
+            <h5 class="mt-4">Как загрузить Web-игру:</h5>
+            <ol>
+              <li>Соберите игру в движке (выберите платформу Web/HTML5).</li>
+              <li>Запакуйте все файлы в один ZIP-архив. Внутри архива обязательно должен быть файл <code>index.html</code>.</li>
+              <li>На itch.io нажмите "Upload new project", загрузите архив и поставьте галочку "This file will be played in the browser".</li>
+            </ol>
+          </div>
+        </article>
+
+        <article class="card mb-4" id="steam">
+          <div class="card-body p-4 p-md-5">
+            <h2 class="mb-4 text-danger"><i class="bi bi-steam me-2"></i>3. Steam и его суровые реалии</h2>
+            <p>Steam — крупнейший магазин игр в мире. Попасть туда — мечта любого разработчика. Но для первой игры это может быть избыточно.</p>
+
+            <h5 class="mt-4">Что нужно знать про Steam:</h5>
+            <ul>
+              <li><strong>Взнос $100:</strong> Вы платите за регистрацию игры (Steam Direct). Эти деньги вернутся, когда игра заработает $1000.</li>
+              <li><strong>Модерация:</strong> Игра должна пройти проверку (работоспособность, отсутствие вирусов).</li>
+              <li><strong>Налоги:</strong> Вам придется заполнить налоговые формы США (даже если вы находитесь в России).</li>
+              <li><strong>Ожидание:</strong> От подачи заявки до релиза проходит минимум 2-4 недели (а лучше 2-3 месяца для накопления вишлистов).</li>
+            </ul>
+
+            <div class="alert alert-warning mt-4">
+              <i class="bi bi-exclamation-triangle-fill me-2"></i><strong>Вывод:</strong> Сначала выпустите игру на itch.io. Посмотрите на реакцию людей. Если игра окупилась и людям нравится — тогда задумывайтесь о Steam.
+            </div>
+          </div>
+        </article>
+
+        <div class="d-grid gap-2 d-md-flex justify-content-md-between mt-5">
+          <a href="publishing.html" class="btn btn-outline-secondary btn-lg"><i class="bi bi-arrow-left me-2"></i>Назад к публикации</a>
+          <a href="index.html" class="btn btn-success btn-lg">Завершить гайд <i class="bi bi-check2-circle ms-2"></i></a>
+        </div>
+
+      </div>
+    </div>
+  </main>
+
+  <footer class="bg-dark text-white-50 text-center py-3 mt-5">
+    <div class="container"><p class="mb-0">© 2026 Gamepedia — учебный проект</p></div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

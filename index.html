@@ -1,0 +1,172 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Gamepedia — гайд по разработке игр</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="bg-body-tertiary">
+
+  <nav class="navbar navbar-expand-lg bg-body shadow-sm sticky-top">
+    <div class="container">
+      <a class="navbar-brand fw-bold" href="index.html"><i class="bi bi-controller me-2 text-primary"></i>Gamepedia</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu" aria-label="Меню">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navMenu">
+        <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-1">
+          <li class="nav-item"><a class="nav-link" href="index.html">Главная</a></li>
+          <li class="nav-item"><a class="nav-link" href="planning.html">Планирование</a></li>
+          <li class="nav-item"><a class="nav-link" href="prototyping.html">Прототип</a></li>
+          <li class="nav-item"><a class="nav-link" href="development.html">Реализация</a></li>
+          <li class="nav-item"><a class="nav-link" href="testing.html">Тестирование</a></li>
+          <li class="nav-item"><a class="nav-link" href="publishing.html">Публикация</a></li>
+          <li class="nav-item ms-lg-2">
+            <button id="themeToggle" class="btn btn-sm btn-outline-secondary" type="button"></button>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <header class="hero py-5">
+    <div class="container py-4 text-center">
+      <h1 class="display-4 fw-bold mb-3"><i class="bi bi-controller me-2"></i>Gamepedia</h1>
+      <p class="lead mb-4">Пошаговый гайд для начинающих разработчиков: от идеи до релиза.</p>
+      <a href="#stages" class="btn btn-light btn-lg">Начать изучение ↓</a>
+    </div>
+  </header>
+
+  <main class="container py-5">
+    <section id="stages">
+      
+      <!-- Заголовок и поле глобального поиска -->
+      <div class="d-flex flex-column flex-md-row justify-content-between align-items-md-end mb-4">
+        <h2 class="section-title mb-3 mb-md-0">Стадии разработки</h2>
+        
+        <div class="input-group shadow-sm" style="max-width: 350px;">
+          <span class="input-group-text bg-body"><i class="bi bi-search"></i></span>
+          <input type="text" id="globalSearchInput" class="form-control" placeholder="Поиск по всей базе знаний...">
+        </div>
+      </div>
+
+      <!-- КОНТЕЙНЕР ДЛЯ РЕЗУЛЬТАТОВ ПОИСКА (Изначально скрыт через d-none) -->
+      <div id="searchResultsContainer" class="row g-4 d-none">
+        <!-- Сюда JS будет динамически вставлять карточки -->
+      </div>
+
+      <!-- ОБЕРТКА ТАЙМЛАЙНА -->
+      <div class="timeline" id="timelineContainer">
+
+        <!-- Этап 1 -->
+        <div class="timeline-item">
+          <div class="timeline-marker bg-warning"></div>
+          <div class="timeline-content card shadow-sm">
+            <div class="card-body">
+              <a href="planning.html" class="text-decoration-none text-body">
+                <h3 class="h5 card-title fw-bold"><i class="bi bi-lightbulb text-warning me-2"></i>1. Планирование</h3>
+                <p class="card-text text-muted mb-0">Идея, концепт, выбор жанра и составление первого плана (GDD).</p>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Этап 2 -->
+        <div class="timeline-item">
+          <div class="timeline-marker bg-success"></div>
+          <div class="timeline-content card shadow-sm">
+            <div class="card-body">
+              <a href="prototyping.html" class="text-decoration-none text-body">
+                <h3 class="h5 card-title fw-bold"><i class="bi bi-puzzle text-success me-2"></i>2. Прототип</h3>
+                <p class="card-text text-muted mb-0">Проверка механик на простых квадратах. Геймдизайн и тесты.</p>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Этап 3 -->
+        <div class="timeline-item">
+          <div class="timeline-marker bg-primary"></div>
+          <div class="timeline-content card shadow-sm">
+            <div class="card-body">
+              <a href="development.html" class="text-decoration-none text-body">
+                <h3 class="h5 card-title fw-bold"><i class="bi bi-gear text-primary me-2"></i>3. Реализация</h3>
+                <p class="card-text text-muted mb-0">Код, движки (Godot, Unity), создание арта, анимаций и звука.</p>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Этап 4 -->
+        <div class="timeline-item">
+          <div class="timeline-marker bg-info"></div>
+          <div class="timeline-content card shadow-sm">
+            <div class="card-body">
+              <a href="testing.html" class="text-decoration-none text-body">
+                <h3 class="h5 card-title fw-bold"><i class="bi bi-search text-info me-2"></i>4. Тестирование</h3>
+                <p class="card-text text-muted mb-0">Поиск багов, баланс сложности, плейтесты и обратная связь.</p>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Этап 5 -->
+        <div class="timeline-item">
+          <div class="timeline-marker bg-danger"></div>
+          <div class="timeline-content card shadow-sm">
+            <div class="card-body">
+              <a href="publishing.html" class="text-decoration-none text-body">
+                <h3 class="h5 card-title fw-bold"><i class="bi bi-box-seam text-danger me-2"></i>5. Публикация</h3>
+                <p class="card-text text-muted mb-0">Подготовка страницы игры и релиз на площадках (itch.io, Steam).</p>
+              </a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Сообщение, если ничего не найдено -->
+      <div id="noResults" class="alert alert-secondary mt-4 d-none text-center">
+        <i class="bi bi-emoji-frown me-2"></i>По вашему запросу ничего не найдено. Попробуйте другое слово (например, "Godot").
+      </div>
+
+    </section>
+
+    <!-- Блок "Как пользоваться" -->
+    <section class="mt-5 pt-4 border-top">
+      <h2 class="section-title mb-4">Как пользоваться</h2>
+      <div class="row g-3">
+        <div class="col-md-4">
+          <div class="p-3 border rounded h-100 bg-body">
+            <strong>1.</strong> Изучай стадии по порядку — от планирования до релиза.
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="p-3 border rounded h-100 bg-body">
+            <strong>2.</strong> Не переходи к коду, пока не сделал простой прототип.
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="p-3 border rounded h-100 bg-body">
+            <strong>3.</strong> Выпусти игру и покажи её людям, даже если она маленькая.
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="bg-dark text-white-50 text-center py-3 mt-5">
+    <div class="container">
+      <p class="mb-0">© 2026 Gamepedia — учебный проект</p>
+    </div>
+  </footer>
+
+  <button id="backToTop" class="btn btn-primary back-to-top" type="button" aria-label="Наверх"><i class="bi bi-arrow-up"></i></button>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

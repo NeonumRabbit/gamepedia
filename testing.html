@@ -1,0 +1,155 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Тестирование — Gamepedia</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="bg-body-tertiary">
+
+  <nav class="navbar navbar-expand-lg bg-body shadow-sm sticky-top">
+    <div class="container">
+      <a class="navbar-brand fw-bold" href="index.html"><i class="bi bi-controller me-2 text-primary"></i>Gamepedia</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu" aria-label="Меню">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navMenu">
+        <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-1">
+          <li class="nav-item"><a class="nav-link" href="index.html">Главная</a></li>
+          <li class="nav-item"><a class="nav-link" href="planning.html">Планирование</a></li>
+          <li class="nav-item"><a class="nav-link" href="prototyping.html">Прототип</a></li>
+          <li class="nav-item"><a class="nav-link" href="development.html">Реализация</a></li>
+          <li class="nav-item"><a class="nav-link" href="testing.html">Тестирование</a></li>
+          <li class="nav-item"><a class="nav-link" href="publishing.html">Публикация</a></li>
+          <li class="nav-item ms-lg-2">
+            <button id="themeToggle" class="btn btn-sm btn-outline-secondary" type="button"></button>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <main class="container py-5">
+    <div class="row">
+      <div class="col-lg-8">
+        <h1 class="section-title mb-4"><i class="bi bi-search text-info me-2"></i>Тестирование</h1>
+        <p class="lead">Игра готова, но это не значит, что в ней нет ошибок. Тестирование помогает найти баги и понять, интересно ли играть.</p>
+        
+        <div class="card mb-4">
+          <div class="card-body">
+            <h3 class="h5">1. Поиск багов</h3>
+            <p class="mb-0">Проверь, не проваливается ли персонаж сквозь текстуры, работают ли кнопки в меню, не вылетает ли игра при сохранении.</p>
+            <button class="btn btn-sm btn-outline-primary mt-3" data-bs-toggle="modal" data-bs-target="#bugsModal">
+              Подробнее <i class="bi bi-arrow-right ms-1"></i>
+            </button>
+          </div>
+        </div>
+
+        <div class="card mb-4">
+          <div class="card-body">
+            <h3 class="h5">2. Плейтест (Playtest)</h3>
+            <p class="mb-0">Дай поиграть друзьям или незнакомым людям. Смотри, где они застревают или что им непонятно. Не подсказывай им!</p>
+            <button class="btn btn-sm btn-outline-primary mt-3" data-bs-toggle="modal" data-bs-target="#playtestModal">
+              Подробнее <i class="bi bi-arrow-right ms-1"></i>
+            </button>
+          </div>
+        </div>
+
+        <div class="card mb-4">
+          <div class="card-body">
+            <h3 class="h5">3. Баланс</h3>
+            <p class="mb-0">Слишком сложно? Слишком легко? Настрой урон врагов, скорость игрока или количество получаемых ресурсов.</p>
+            <button class="btn btn-sm btn-outline-primary mt-3" data-bs-toggle="modal" data-bs-target="#balanceModal">
+              Подробнее <i class="bi bi-arrow-right ms-1"></i>
+            </button>
+          </div>
+        </div>
+
+        <!-- БОЛЬШАЯ КНОПКА ПЕРЕХОДА В БАЗУ ЗНАНИЙ -->
+        <div class="alert alert-info d-flex flex-column flex-md-row justify-content-between align-items-md-center mt-5 shadow-sm" role="alert">
+          <div class="mb-3 mb-md-0">
+            <h5 class="alert-heading fw-bold mb-1"><i class="bi bi-journal-text me-2"></i>Хотите узнать всё в деталях?</h5>
+            <p class="mb-0">Мы собрали огромную базу знаний по поиску багов и плейтестам в одной статье.</p>
+          </div>
+          <a href="testing-full.html" class="btn btn-info btn-lg text-nowrap ms-md-3 text-white">Читать статью <i class="bi bi-box-arrow-up-right ms-1"></i></a>
+        </div>
+
+        <!-- Кнопка перехода на следующий этап -->
+        <div class="mt-4">
+          <a href="publishing.html" class="btn btn-primary btn-lg w-100">Следующая стадия: Публикация <i class="bi bi-arrow-right ms-2"></i></a>
+        </div>
+
+      </div>
+    </div>
+  </main>
+
+  <footer class="bg-dark text-white-50 text-center py-3 mt-5">
+    <div class="container"><p class="mb-0">© 2026 Gamepedia — учебный проект</p></div>
+  </footer>
+
+  <button id="backToTop" class="btn btn-primary back-to-top" type="button" aria-label="Наверх"><i class="bi bi-arrow-up"></i></button>
+
+  <!-- МОДАЛЬНЫЕ ОКНА -->
+  <div class="modal fade" id="bugsModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-scrollable">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title fw-bold"><i class="bi bi-bug text-info me-2"></i>Классификация багов</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Закрыть"></button>
+        </div>
+        <div class="modal-body">
+          <p>Баги бывают разные, и их важно правильно записывать (составлять баг-репорты):</p>
+          <ul>
+            <li><strong>Критические (Blocker):</strong> Игра вылетает или ломается сохранение. Исправлять в первую очередь.</li>
+            <li><strong>Логические:</strong> Кнопка есть, но она не работает (например, не открывается дверь).</li>
+            <li><strong>Визуальные:</strong> Текстуры мерцают, анимация застревает, интерфейс уезжает за край экрана.</li>
+            <li><strong>Балансные:</strong> Один меч убивает финального босса с одного удара (эксплойт).</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal fade" id="playtestModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-scrollable">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title fw-bold"><i class="bi bi-people text-info me-2"></i>Как проводить плейтест</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Закрыть"></button>
+        </div>
+        <div class="modal-body">
+          <p>Плейтест — это не когда вы показываете игру и объясняете, какая она крутая. Это когда вы молчите и наблюдаете.</p>
+          <ol>
+            <li>Дайте игроку управление и скажите только базовую цель («дойди до конца уровня»).</li>
+            <li>Сядьте рядом и <strong>молчите</strong>. Если игрок не понимает, куда идти — это плохой дизайн уровня, а не глупый игрок.</li>
+            <li>Записывайте на видео лицо и экран игрока (с его разрешения). Эмоции скажут больше слов.</li>
+            <li>После игры задайте открытые вопросы: «Что было самым скучным?», «Что было непонятно?».</li>
+          </ol>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal fade" id="balanceModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-scrollable">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title fw-bold"><i class="bi bi-sliders text-info me-2"></i>Искусство баланса</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Закрыть"></button>
+        </div>
+        <div class="modal-body">
+          <p>Баланс — это когда игра не слишком легкая и не слишком сложная. Хорошая игра всегда честна с игроком.</p>
+          <p><strong>Кривая сложности:</strong> В начале игрок должен побеждать легко (чтобы почувствовать силу), затем враги становятся умнее и сильнее. Но не должно быть резких скачков.</p>
+          <p><strong>Правило «Золотой середины»:</strong> Если игрок умирает на боссе 50 раз подряд — это плохо (он удалит игру). Если убивает с 1 удара — тоже плохо (нет вызова, скучно). Игрок должен чувствовать, что он проиграл из-за своей ошибки, а не из-за «читерства» игры.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

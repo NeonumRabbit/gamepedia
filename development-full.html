@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Полное руководство по реализации — Gamepedia</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="bg-body-tertiary">
+
+  <nav class="navbar navbar-expand-lg bg-body shadow-sm sticky-top">
+    <div class="container">
+      <a class="navbar-brand fw-bold" href="index.html"><i class="bi bi-controller me-2 text-primary"></i>Gamepedia</a>
+      <div class="navbar-nav ms-auto flex-row flex-wrap">
+        <a class="nav-link" href="index.html">Главная</a>
+        <a class="nav-link" href="development.html">← Назад к реализации</a>
+      </div>
+    </div>
+  </nav>
+
+  <header class="bg-primary text-white py-5 mb-5 shadow-sm" style="background: linear-gradient(135deg, #0d6efd 0%, #0a58ca 100%);">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8">
+          <span class="badge bg-light text-primary mb-3">База знаний</span>
+          <h1 class="display-5 fw-bold">Глубокое погружение: Реализация</h1>
+          <p class="lead mb-0">Выбор движка, программирование и поиск бесплатных ассетов для вашей игры.</p>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main class="container pb-5">
+    <div class="row">
+      <!-- Боковое меню -->
+      <div class="col-lg-3 d-none d-lg-block">
+        <div class="position-sticky" style="top: 100px;">
+          <div class="card border-primary">
+            <div class="card-header fw-bold bg-primary text-white">Содержание</div>
+            <ul class="list-group list-group-flush">
+              <li class="list-group-item"><a href="#engines" class="text-decoration-none">1. Выбор движка</a></li>
+              <li class="list-group-item"><a href="#code" class="text-decoration-none">2. Код и математика</a></li>
+              <li class="list-group-item"><a href="#assets" class="text-decoration-none">3. Графика и звук</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- Сама статья -->
+      <div class="col-lg-9">
+        
+        <article class="card mb-4" id="engines">
+          <div class="card-body p-4 p-md-5">
+            <h2 class="mb-4 text-primary"><i class="bi bi-boxes me-2"></i>1. Как выбрать движок и не пожалеть</h2>
+            <p>Игровой движок — это программа, которая берет на себя всю сложную работу (физику, рендеринг графики, звук), чтобы вы могли просто собирать игру как конструктор.</p>
+            
+            <h5 class="mt-4">Godot — лучший выбор для 2D и новичков</h5>
+            <p>Абсолютно бесплатный, весит всего 100 мегабайт (в отличие от Unity). Использует язык GDScript, который очень похож на Python и читается как обычный английский текст. Идеален, если вы делаете 2D-платформер или пиксельную игру.</p>
+
+            <h5 class="mt-4">Unity — золотой стандарт индустрии</h5>
+            <p>На нем сделано 70% мобильных игр. Огромное количество обучающих видео на YouTube (на русском тоже). Использует язык C#. Мощный, но для слабых ноутбуков может быть тяжеловат. Отлично подходит для 3D и 2D.</p>
+
+            <div class="alert alert-primary mt-4">
+              <i class="bi bi-controller me-2"></i><strong>Совет:</strong> Не пытайтесь выучить два движка одновременно. Выберите один (например, Godot) и сделайте на нем 3 маленькие игры.
+            </div>
+          </div>
+        </article>
+
+        <article class="card mb-4" id="code">
+          <div class="card-body p-4 p-md-5">
+            <h2 class="mb-4 text-primary"><i class="bi bi-code-slash me-2"></i>2. Программирование и математика</h2>
+            <p>Многие боятся слова «программирование», представляя себе хакеров из фильмов. В геймдеве все проще. Вам нужно знать всего 4 базовые концепции:</p>
+
+            <ul>
+              <li><strong>Переменные:</strong> Коробки, в которых хранятся числа. (Например, <code>health = 100</code> или <code>speed = 5</code>).</li>
+              <li><strong>Условия (if/else):</strong> «Если здоровье меньше нуля — включить экран смерти».</li>
+              <li><strong>Функции:</strong> Кусочки кода, которые можно вызывать. Например, функция <code>Jump()</code> заставляет персонажа прыгать.</li>
+              <li><strong>Векторы:</strong> Это математика движения. Вектор — это стрелка с направлением. Если мы хотим, чтобы пуля летела вправо, мы прибавляем к ее позиции вектор (1, 0). Чтобы вверх — (0, 1).</li>
+            </ul>
+
+            <h5 class="mt-4">Зачем нужна математика?</h5>
+            <p>Чтобы враг смотрел на игрока, нужно вычислить угол между ними (тригонометрия). Чтобы персонаж не проваливался сквозь стены, нужно проверить пересечение двух прямоугольников (коллизии/AABB). Вам не нужно быть математическим гением, достаточно понимать базовые принципы.</p>
+          </div>
+        </article>
+
+        <article class="card mb-4" id="assets">
+          <div class="card-body p-4 p-md-5">
+            <h2 class="mb-4 text-primary"><i class="bi bi-palette me-2"></i>3. Графика, звук и авторские права</h2>
+            <p>Если вы не умеете рисовать, это не значит, что игра будет страшной. Главное правило — искать ассеты с правильной лицензией.</p>
+
+            <h5 class="mt-4">Что такое лицензия CC0?</h5>
+            <p>Это значит «Общественное достояние». Автор отдал свои модели/звуки/спрайты бесплатно и разрешил использовать их где угодно, даже в коммерческих играх. Вам не нужно указывать его имя (хотя это хороший тон).</p>
+
+            <h5 class="mt-4">Лучшие сайты для поиска:</h5>
+            <ul>
+              <li><strong>Kenney.nl</strong> — тысячи бесплатных наборов для 2D и 3D игр (от оружия до интерфейсов).</li>
+              <li><strong>OpenGameArt.org</strong> — большая база графики. Внимательно смотрите лицензию (не всё там CC0).</li>
+              <li><strong>Freesound.org</strong> — база звуков (выстрелы, шаги, взрывы).</li>
+              <li><strong>Mixamo.com</strong> — бесплатные 3D-анимации (ходьба, бег, прыжки) для персонажей.</li>
+            </ul>
+          </div>
+        </article>
+
+        <div class="d-grid gap-2 d-md-flex justify-content-md-between mt-5">
+          <a href="development.html" class="btn btn-outline-secondary btn-lg"><i class="bi bi-arrow-left me-2"></i>Назад к реализации</a>
+          <a href="testing.html" class="btn btn-primary btn-lg">Следующая стадия <i class="bi bi-arrow-right ms-2"></i></a>
+        </div>
+
+      </div>
+    </div>
+  </main>
+
+  <footer class="bg-dark text-white-50 text-center py-3 mt-5">
+    <div class="container"><p class="mb-0">© 2026 Gamepedia — учебный проект</p></div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

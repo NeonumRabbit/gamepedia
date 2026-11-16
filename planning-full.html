@@ -1,0 +1,141 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Полное руководство по планированию — Gamepedia</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="bg-body-tertiary">
+
+  <nav class="navbar navbar-expand-lg bg-body shadow-sm sticky-top">
+    <div class="container">
+      <a class="navbar-brand fw-bold" href="index.html"><i class="bi bi-controller me-2 text-primary"></i>Gamepedia</a>
+      <div class="navbar-nav ms-auto flex-row flex-wrap">
+        <a class="nav-link" href="index.html">Главная</a>
+        <a class="nav-link" href="planning.html">← Назад к планированию</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ЖЁЛТО-ОРАНЖЕВАЯ ШАПКА -->
+  <header class="py-5 mb-5 shadow-sm" style="background: linear-gradient(135deg, #ffc107 0%, #fd7e14 100%); color: #212529;">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8">
+          <span class="badge bg-dark text-warning mb-3">База знаний</span>
+          <h1 class="display-5 fw-bold">Глубокое погружение: Планирование</h1>
+          <p class="lead mb-0">Полное руководство по выбору жанра, описанию механик и созданию игровых документов.</p>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main class="container pb-5">
+    <div class="row">
+      <!-- Боковое меню (ИСПРАВЛЕНО: ИСПОЛЬЗУЕТСЯ ALERT-WARNING ВМЕСТО BG-WARNING TEXT-DARK) -->
+      <div class="col-lg-3 d-none d-lg-block">
+        <div class="position-sticky" style="top: 100px;">
+          <div class="card border-warning">
+            <div class="alert alert-warning fw-bold mb-0 rounded-top rounded-0 border-0">Содержание</div>
+            <ul class="list-group list-group-flush">
+              <li class="list-group-item"><a href="#genre" class="text-decoration-none text-body">1. Жанры и платформы</a></li>
+              <li class="list-group-item"><a href="#mechanic" class="text-decoration-none text-body">2. Игровые механики</a></li>
+              <li class="list-group-item"><a href="#gdd" class="text-decoration-none text-body">3. Как писать GDD</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- Сама статья -->
+      <div class="col-lg-9">
+        
+        <article class="card mb-4" id="genre">
+          <div class="card-body p-4 p-md-5">
+            <h2 class="mb-4"><i class="bi bi-controller text-warning me-2"></i>1. Как выбрать жанр и платформу</h2>
+            <p>Первое, с чем сталкивается начинающий разработчик — это иллюзия, что можно сделать игру уровня GTA или Cyberpunk в одиночку за месяц. Это не так. Выбор жанра на старте определяет 90% успеха вашего проекта.</p>
+            
+            <h5 class="mt-4">Почему нельзя начинать с MMORPG или RPG с открытым миром?</h5>
+            <p>Такие игры требуют колоссальных ресурсов: программирование сложных систем инвентаря, баланса, ИИ, написание сотен тысяч строк диалогов. В одиночку вы просто выгорите. Начинать нужно с так называемых "мини-игр".</p>
+
+            <!-- ИСПРАВЛЕНО: УБРАН TEXT-DARK -->
+            <div class="alert alert-warning mt-4">
+              <i class="bi bi-info-circle me-2"></i><strong>Совет:</strong> Идеальный первый проект должен быть завершен за 1-3 месяца. Это даст вам опыт и уверенность.
+            </div>
+
+            <h5 class="mt-4">Топ-3 простых жанра для старта:</h5>
+            <ul>
+              <li><strong>Платформер (2D):</strong> Марио, Celeste. Вам нужно только настроить прыжок, гравитацию и коллизии (столкновения). Отлично подходит для изучения физики движка.</li>
+              <li><strong>Головоломка (Puzzle):</strong> Сокобан, Тетрис. Здесь нет сложной физики или анимаций. Вся игра строится на логике и правилах.</li>
+              <li><strong>Визуальная новелла:</strong> По сути, интерактивная книга. Вам не нужны 3D-модели. Только картинки, текст и система выборов.</li>
+            </ul>
+
+            <h5 class="mt-4">Выбор платформы: ПК против Мобилок</h5>
+            <p><strong>PC (Windows/Steam):</strong> Проще всего тестировать и отлаживать. Игроки лояльнее к сложным механикам.</p>
+            <p><strong>Web (Браузер):</strong> Идеально для небольших игр. Игрок открывает ссылку и сразу играет. Не нужно ничего скачивать. Если выложить на itch.io, можно легко поделиться с друзьями.</p>
+            <p><strong>Mobile (Android/iOS):</strong> Кажется, что это легко, но настройка тач-управления — это боль. Пальцы закрывают экран, кнопки нужно делать большими. Публикация в AppStore требует денег ($99 в год).</p>
+          </div>
+        </article>
+
+        <article class="card mb-4" id="mechanic">
+          <div class="card-body p-4 p-md-5">
+            <h2 class="mb-4"><i class="bi bi-puzzle text-warning me-2"></i>2. Как описать игровую механику</h2>
+            <p>Механика — это то, что игрок делает руками (нажимает кнопки). Геймплей — это то, как игра реагирует на это. Вам нужно сформулировать главную механику в одном предложении.</p>
+
+            <h5 class="mt-4">Формула идеального питча (Elevator Pitch)</h5>
+            <p>Представьте, что вы зашли в лифт с инвестором, и у вас есть 30 секунд, чтобы описать игру. Используйте шаблон:</p>
+            <div class="p-3 bg-body-secondary rounded border mb-3">
+              <em>«Это игра, где [Персонаж] делает [Главное действие], чтобы достичь [Цель], преодолевая [Препятствие]».</em>
+            </div>
+            <p>Пример: <em>«Это игра, где кот с реактивным ранцем собирает рыбу, чтобы спасти мир, уклоняясь от злых роботов-пылесосов»</em>.</p>
+
+            <h5 class="mt-4">Главный игровой цикл (Core Loop)</h5>
+            <p>Это сердце вашей игры. Игрок будет повторять этот цикл тысячи раз. Если он скучный — игра провалилась.</p>
+            <p>Цикл состоит из трех фаз:</p>
+            <ol>
+              <li><strong>Вызов (Challenge):</strong> Появился враг или препятствие. Игрок напрягся.</li>
+              <li><strong>Действие (Action):</strong> Игрок нажимает кнопку (прыжок, выстрел, удар).</li>
+              <li><strong>Награда (Reward):</strong> Враг исчез, проиграл приятный звук, выпали монеты. Игрок получил дофамин.</li>
+            </ol>
+          </div>
+        </article>
+
+        <article class="card mb-4" id="gdd">
+          <div class="card-body p-4 p-md-5">
+            <h2 class="mb-4"><i class="bi bi-file-earmark-text text-warning me-2"></i>3. Как написать GDD (Game Design Document)</h2>
+            <p>GDD — это библия вашего проекта. Документ, в котором описано всё: от идеи до управления. Новички часто пишут GDD на 100 страниц и бросают проект.</p>
+
+            <h5 class="mt-4">Правило одного листа (One-Pager)</h5>
+            <p>Для старта вам достаточно одного листа. Включите в него:</p>
+            <ul>
+              <li><strong>Название:</strong> Рабочее название игры.</li>
+              <li><strong>Жанр и платформа:</strong> (Например: 2D платформер, Web).</li>
+              <li><strong>Суть игры:</strong> 2-3 предложения о чем игра.</li>
+              <li><strong>Управление:</strong> Какая кнопка за что отвечает (WASD, Пробел, ЛКМ).</li>
+              <li><strong>Визуальный стиль:</strong> Пиксель-арт, Low-poly, или просто геометрические фигуры (референсы).</li>
+            </ul>
+
+            <h5 class="mt-4">Зачем нужен GDD?</h5>
+            <p>Когда вы разрабатываете игру 2 месяца, ваша голова забивается кодом и багами. Вы можете забыть, какой урон должен наносить босс или как работает прыжок. GDD — это ваша память. Кроме того, если вы работаете в команде, GDD — единственный способ объяснить художнику, что именно ему нужно нарисовать.</p>
+          </div>
+        </article>
+
+        <div class="d-grid gap-2 d-md-flex justify-content-md-between mt-5">
+          <a href="planning.html" class="btn btn-outline-secondary btn-lg"><i class="bi bi-arrow-left me-2"></i>Назад к планированию</a>
+          <a href="prototyping.html" class="btn btn-primary btn-lg">Следующая стадия <i class="bi bi-arrow-right ms-2"></i></a>
+        </div>
+
+      </div>
+    </div>
+  </main>
+
+  <footer class="bg-dark text-white-50 text-center py-3 mt-5">
+    <div class="container"><p class="mb-0">© 2026 Gamepedia — учебный проект</p></div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,160 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Публикация — Gamepedia</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="bg-body-tertiary">
+
+  <nav class="navbar navbar-expand-lg bg-body shadow-sm sticky-top">
+    <div class="container">
+      <a class="navbar-brand fw-bold" href="index.html"><i class="bi bi-controller me-2 text-primary"></i>Gamepedia</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu" aria-label="Меню">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navMenu">
+        <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-1">
+          <li class="nav-item"><a class="nav-link" href="index.html">Главная</a></li>
+          <li class="nav-item"><a class="nav-link" href="planning.html">Планирование</a></li>
+          <li class="nav-item"><a class="nav-link" href="prototyping.html">Прототип</a></li>
+          <li class="nav-item"><a class="nav-link" href="development.html">Реализация</a></li>
+          <li class="nav-item"><a class="nav-link" href="testing.html">Тестирование</a></li>
+          <li class="nav-item"><a class="nav-link" href="publishing.html">Публикация</a></li>
+          <li class="nav-item ms-lg-2">
+            <button id="themeToggle" class="btn btn-sm btn-outline-secondary" type="button"></button>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <main class="container py-5">
+    <div class="row">
+      <div class="col-lg-8">
+        <h1 class="section-title mb-4"><i class="bi bi-box-seam text-danger me-2"></i>Публикация</h1>
+        <p class="lead">Финальный шаг — выпустить игру в мир, чтобы в неё могли поиграть другие люди.</p>
+        
+        <div class="card mb-4">
+          <div class="card-body">
+            <h3 class="h5">1. Подготовка страницы игры</h3>
+            <p class="mb-0">Сделай красивые скриншоты, запиши короткий трейлер (гифку) и напиши описание. Люди судят об игре по обложке.</p>
+            <button class="btn btn-sm btn-outline-primary mt-3" data-bs-toggle="modal" data-bs-target="#storePageModal">
+              Подробнее <i class="bi bi-arrow-right ms-1"></i>
+            </button>
+          </div>
+        </div>
+
+        <div class="card mb-4">
+          <div class="card-body">
+            <h3 class="h5">2. itch.io — лучший старт</h3>
+            <p class="mb-0">Бесплатная площадка для инди-игр. Загружаешь архив с игрой (или веб-версию), настраиваешь страницу и получаешь ссылку.</p>
+            <button class="btn btn-sm btn-outline-primary mt-3" data-bs-toggle="modal" data-bs-target="#itchModal">
+              Подробнее <i class="bi bi-arrow-right ms-1"></i>
+            </button>
+          </div>
+        </div>
+
+        <div class="card mb-4">
+          <div class="card-body">
+            <h3 class="h5">3. Steam (если игра большая)</h3>
+            <p class="mb-0">Крупнейший магазин, но требует взнос $100 за регистрацию проекта и прохождение модерации. Для первой игры чаще всего избыточно.</p>
+            <button class="btn btn-sm btn-outline-primary mt-3" data-bs-toggle="modal" data-bs-target="#steamModal">
+              Подробнее <i class="bi bi-arrow-right ms-1"></i>
+            </button>
+          </div>
+        </div>
+
+        <!-- БОЛЬШАЯ КНОПКА ПЕРЕХОДА В БАЗУ ЗНАНИЙ -->
+        <div class="alert alert-danger d-flex flex-column flex-md-row justify-content-between align-items-md-center mt-5 shadow-sm" role="alert">
+          <div class="mb-3 mb-md-0">
+            <h5 class="alert-heading fw-bold mb-1"><i class="bi bi-journal-text me-2"></i>Хотите узнать всё в деталях?</h5>
+            <p class="mb-0">Мы собрали огромную базу знаний по оформлению страниц и площадкам в одной статье.</p>
+          </div>
+          <a href="publishing-full.html" class="btn btn-danger btn-lg text-nowrap ms-md-3">Читать статью <i class="bi bi-box-arrow-up-right ms-1"></i></a>
+        </div>
+
+        <!-- Кнопка перехода на Главную (так как это конец) -->
+        <div class="mt-4">
+          <a href="index.html" class="btn btn-success btn-lg w-100">Вы дошли до конца! Вернуться на главную <i class="bi bi-check2-circle ms-2"></i></a>
+        </div>
+
+      </div>
+    </div>
+  </main>
+
+  <footer class="bg-dark text-white-50 text-center py-3 mt-5">
+    <div class="container"><p class="mb-0">© 2026 Gamepedia — учебный проект</p></div>
+  </footer>
+
+  <button id="backToTop" class="btn btn-primary back-to-top" type="button" aria-label="Наверх"><i class="bi bi-arrow-up"></i></button>
+
+  <!-- МОДАЛЬНЫЕ ОКНА -->
+  <div class="modal fade" id="storePageModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-scrollable">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title fw-bold"><i class="bi bi-card-image text-danger me-2"></i>Как оформить страницу</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Закрыть"></button>
+        </div>
+        <div class="modal-body">
+          <p>Маркетинг начинается не с рекламы, а с оформления страницы. Что нужно:</p>
+          <ul>
+            <li><strong>Капсула (Обложка):</strong> Яркая картинка, которая цепляет взгляд в ленте.</li>
+            <li><strong>Гифки:</strong> Статичные скриншоты почти никто не смотрит. Запишите 3-4 коротких гифки с самым интересным геймплеем.</li>
+            <li><strong>Описание:</strong> Первые два предложения — самые важные. Напишите, что это за игра, без воды. (Плохо: «Это игра про приключения». Хорошо: «Хардкорный платформер, где вы играете за кота с реактивным ранцем»).</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal fade" id="itchModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-scrollable">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title fw-bold"><i class="bi bi-cloud-arrow-up text-danger me-2"></i>Публикация на itch.io</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Закрыть"></button>
+        </div>
+        <div class="modal-body">
+          <p>itch.io — это рай для инди-разработчиков. Публикация полностью бесплатна.</p>
+          <ol>
+            <li>Зарегистрируйтесь и нажмите <strong>Upload new project</strong>.</li>
+            <li>Заполните название и описание.</li>
+            <li><strong>Kind of project:</strong> выберите HTML (если игра в браузере) или Downloadable (если это exe/zip файл).</li>
+            <li>Загрузите файлы. Если это HTML5, запакуйте все файлы игры в ZIP-архив (внутри архива обязательно должен быть `index.html`).</li>
+            <li>Поставьте галочку <em>«This file will be played in the browser»</em> и укажите размер окна игры.</li>
+            <li>Нажмите <strong>Save & view page</strong>, а затем <strong>Publish</strong>.</li>
+          </ol>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal fade" id="steamModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-scrollable">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title fw-bold"><i class="bi bi-steam text-danger me-2"></i>Особенности Steam</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Закрыть"></button>
+        </div>
+        <div class="modal-body">
+          <p>Steam — самая большая витрина игр в мире, но туда пускают не всех и не бесплатно.</p>
+          <ul>
+            <li><strong>Взнос:</strong> Вы платите $100 за регистрацию приложения (Steam Direct). Эти деньги вернутся, если игра заработает $1000.</li>
+            <li><strong>Модерация:</strong> Игра должна пройти проверку (работоспособность, отсутствие вирусов, наличие скриншотов).</li>
+            <li><strong>Налоги:</strong> Вам потребуется заполнить налоговые формы США (даже если вы в России).</li>
+            <li><strong>Ожидание:</strong> От подачи заявки до релиза должно пройти минимум 2 недели (а лучше 2-3 месяца для накопления вишлистов).</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

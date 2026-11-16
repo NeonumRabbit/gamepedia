@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Полное руководство по прототипированию — Gamepedia</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="bg-body-tertiary">
+
+  <nav class="navbar navbar-expand-lg bg-body shadow-sm sticky-top">
+    <div class="container">
+      <a class="navbar-brand fw-bold" href="index.html"><i class="bi bi-controller me-2 text-primary"></i>Gamepedia</a>
+      <div class="navbar-nav ms-auto flex-row flex-wrap">
+        <a class="nav-link" href="index.html">Главная</a>
+        <a class="nav-link" href="prototyping.html">← Назад к прототипу</a>
+      </div>
+    </div>
+  </nav>
+
+  <header class="bg-success text-white py-5 mb-5 shadow-sm" style="background: linear-gradient(135deg, #198754 0%, #146c43 100%);">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8">
+          <span class="badge bg-light text-success mb-3">База знаний</span>
+          <h1 class="display-5 fw-bold">Глубокое погружение: Прототипирование</h1>
+          <p class="lead mb-0">Как проверить механику игры за пару дней, не потратив ни рубля на графику.</p>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main class="container pb-5">
+    <div class="row">
+      <!-- Боковое меню (навигация по статье) -->
+      <div class="col-lg-3 d-none d-lg-block">
+        <div class="position-sticky" style="top: 100px;">
+          <div class="card border-success">
+            <div class="card-header fw-bold bg-success text-white">Содержание</div>
+            <ul class="list-group list-group-flush">
+              <li class="list-group-item"><a href="#squares" class="text-decoration-none">1. Правило квадратов</a></li>
+              <li class="list-group-item"><a href="#coreloop" class="text-decoration-none">2. Игровой цикл (Core Loop)</a></li>
+              <li class="list-group-item"><a href="#mvp" class="text-decoration-none">3. Концепция MVP</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- Сама статья -->
+      <div class="col-lg-9">
+        
+        <article class="card mb-4" id="squares">
+          <div class="card-body p-4 p-md-5">
+            <h2 class="mb-4 text-success"><i class="bi bi-square me-2"></i>1. Правило квадратов: почему графика — это зло?</h2>
+            <p>Начинающие разработчики часто совершают одну и ту же ошибку: они начинают создание игры с рисовки красивого главного героя, поиска шрифтов и подбора цветовой палитры. Проходит месяц, персонаж выглядит потрясающе, но когда дело доходит до кода, выясняется, что сама игра — скучная.</p>
+            
+            <h5 class="mt-4">Game Feel (Ощущение от игры)</h5>
+            <p>Игра должна приносить удовольствие от самого процесса. Нажимать на кнопку прыжка должно быть приятно. Для проверки этого не нужна графика. Используйте цветные квадраты (примитивы). Если вам скучно играть квадратом, который прыгает по прямоугольникам — с красивой графикой игра тоже будет скучной.</p>
+
+            <div class="alert alert-success mt-4">
+              <i class="bi bi-lightning-charge-fill me-2"></i><strong>Скорость итерации:</strong> Чтобы изменить цвет квадрата, нужно 2 секунды. Чтобы перерисовать анимацию бега персонажа — 2 часа. Прототип позволяет менять цифры (скорость, гравитацию) и мгновенно видеть результат.
+            </div>
+
+            <h5 class="mt-4">Что тестируется на квадратах?</h5>
+            <ul>
+              <li><strong>Тайминги:</strong> Насколько быстро персонаж падает? Сколько времени занимает перезарядка оружия?</li>
+              <li><strong>Хитбоксы:</strong> Насколько точно игра определяет попадание пули во врага?</li>
+              <li><strong>Чувствительность управления:</strong> Не слишком ли скользкий персонаж?</li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="card mb-4" id="coreloop">
+          <div class="card-body p-4 p-md-5">
+            <h2 class="mb-4 text-success"><i class="bi bi-arrow-repeat me-2"></i>2. Игровой цикл (Core Loop)</h2>
+            <p>Игровой цикл — это последовательность действий, которую игрок повторяет чаще всего. В Марио это: бежать вправо → прыгнуть на гумбу → получить монетку. Если этот цикл не приносит удовольствия, игра провалится.</p>
+
+            <h5 class="mt-4">Три фазы цикла:</h5>
+            <ol>
+              <li><strong>Вызов (Challenge):</strong> Появилось препятствие (враг, яма, головоломка).</li>
+              <li><strong>Действие (Action):</strong> Игрок применяет свой навык (стреляет, прыгает, строит).</li>
+              <li><strong>Награда (Reward):</strong> Игра дает обратную связь (звук, взрыв, выпадение лута).</li>
+            </ol>
+
+            <h5 class="mt-4">Обратная связь (Feedback) решает всё</h5>
+            <p>В прототипе обязательно настройте «сочность» (Juice):</p>
+            <ul>
+              <li>Когда игрок бьет врага, враг должен <strong>мигнуть белым</strong>.</li>
+              <li>Должен проиграться <strong>хрустящий звук</strong>.</li>
+              <li>Экран должен <strong>слегка дрогнуть</strong> (Screen Shake).</li>
+            </ul>
+            <p>Без этих мелочей даже отличная механика будет ощущаться «ватной» и скучной.</p>
+          </div>
+        </article>
+
+        <article class="card mb-4" id="mvp">
+          <div class="card-body p-4 p-md-5">
+            <h2 class="mb-4 text-success"><i class="bi bi-box me-2"></i>3. Концепция MVP</h2>
+            <p><strong>MVP (Minimum Viable Product)</strong> — минимально жизнеспособный продукт. Это значит, что вы отсекаете всё лишнее, оставляя только то, что делает игру игрой.</p>
+
+            <h5 class="mt-4">Пример MVP для платформера:</h5>
+            <ul>
+              <li><strong>Есть:</strong> 1 уровень, 1 вид врагов, кнопка прыжка, экран смерти и экран победы.</li>
+              <li><strong>Нет:</strong> Сюжет, кастомизация персонажа, магазин, 10 видов оружия, мультиплеер.</li>
+            </ul>
+
+            <div class="alert alert-warning mt-4">
+              <i class="bi bi-exclamation-triangle-fill me-2"></i><strong>Правило выживания:</strong> Если вы делаете игру 3 месяца и не выпустили ни одной играбельной версии — вы, скорее всего, бросите проект. Сделайте MVP за 2 недели. Покажите друзьям. Если им весело — развивайте игру. Если нет — начните новый прототип.
+            </div>
+          </div>
+        </article>
+
+        <div class="d-grid gap-2 d-md-flex justify-content-md-between mt-5">
+          <a href="prototyping.html" class="btn btn-outline-secondary btn-lg"><i class="bi bi-arrow-left me-2"></i>Назад к прототипу</a>
+          <a href="development.html" class="btn btn-primary btn-lg">Следующая стадия <i class="bi bi-arrow-right ms-2"></i></a>
+        </div>
+
+      </div>
+    </div>
+  </main>
+
+  <footer class="bg-dark text-white-50 text-center py-3 mt-5">
+    <div class="container"><p class="mb-0">© 2026 Gamepedia — учебный проект</p></div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
